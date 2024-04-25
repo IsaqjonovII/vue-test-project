@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
 body {
-    background-color: #F0F3F7;
-    color: #16191D;
+  background-color: #f0f3f7;
+  color: #16191d;
 }
