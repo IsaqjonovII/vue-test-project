@@ -25,11 +25,23 @@ const currentImg = computed(() => galleryData[currentImgIndex.value].img);
 function handleImgClick(id) {
   currentImgIndex.value = id;
 }
+
+function moveToLeft(e) {
+  if (e.target.parentElement.scrollLeft != 0) {
+    e.target.parentElement.scrollLeft -= 128 * 3;
+  }
+}
+function moveToRight(e) {
+  if (e.target.nodeName === "svg") {
+    e.target.parentElement.parentElement.scrollLeft += 128 * 3;
+  }
+  e.target.parentElement.scrollLeft += 128 * 3;
+}
 </script>
 
 <template>
   <div class="max-w-[835px] p-4 bg-white rounded-xl">
-    <div class="bg-red-500 rounded-xl relative">
+    <div class="rounded-xl relative">
       <button
         @click="prevImage"
         class="p-3 bg-gray-200 rounded-full hover:bg-blue-600 absolute top-1/2 -left-3 hover:text-white transition-colors"
@@ -37,10 +49,7 @@ function handleImgClick(id) {
         <ChevronLeftIcon class="h-5 w-5 align-middle" />
       </button>
 
-      <div
-        v-if="galleryData.length > 0"
-        class="w-full max-w-[834px] h-[500px] bg-red-400"
-      >
+      <div v-if="galleryData.length > 0" class="w-full max-w-[834px] h-[500px]">
         <img
           :src="currentImg"
           alt=""
@@ -55,29 +64,31 @@ function handleImgClick(id) {
         <ChevronRightIcon class="h-5 w-5 align-middle" />
       </button>
     </div>
-    <div
-      class="w-full h-28 overflow-x-auto overflow-y-hidden flex items-center gap-2 py-2 relative no-scrollbar"
-    >
-      <button
-        @click="prevImage"
-        class="p-3 bg-gray-200 rounded-full hover:bg-blue-600 absolute top-[calc(1/2 - 35px)] left-3 hover:text-white transition-colors"
+    <div class="relative">
+      <div
+        class="w-full h-28 overflow-x-auto overflow-y-hidden flex items-center gap-2 py-2 no-scrollbar transition-all"
       >
-        <ChevronLeftIcon class="h-5 w-5 align-middle" />
-      </button>
-      <img
-        v-for="item in galleryData"
-        :key="item.id"
-        class="w-32 h-full object-cover object-center rounded-md cursor-pointer"
-        :src="item.img"
-        @click="() => handleImgClick(item.id)"
-        alt="gallery img"
-      />
-      <button
-        @click="nextImage"
-        class="p-3 bg-gray-200 rounded-full hover:bg-blue-600 absolute top-[calc(1/2 - 35px) right-3 hover:text-white transition-colors"
-      >
-        <ChevronRightIcon class="h-5 w-5 align-middle" />
-      </button>
+        <button
+          @click="moveToLeft"
+          class="p-3 bg-gray-200 rounded-full hover:bg-blue-600 absolute top-[calc(1/2 - 35px)] left-3 hover:text-white transition-colors"
+        >
+          <ChevronLeftIcon class="h-5 w-5 align-middle" />
+        </button>
+        <img
+          v-for="item in galleryData"
+          :key="item.id"
+          class="w-32 h-full object-cover object-center rounded-md cursor-pointer"
+          :src="item.img"
+          @click="() => handleImgClick(item.id)"
+          alt="gallery img"
+        />
+        <button
+          @click="moveToRight"
+          class="p-3 bg-gray-200 rounded-full hover:bg-blue-600 absolute top-[calc(1/2 - 35px) right-3 hover:text-white transition-colors"
+        >
+          <ChevronRightIcon class="h-5 w-5 align-middle" />
+        </button>
+      </div>
     </div>
   </div>
 </template>
