@@ -18,7 +18,7 @@ const data = [
 </script>
 
 <template>
-  <header class="flex bg-[#ffffff92] h-20 px-5">
+  <header class="flex bg-[#ffffff92] h-20 px-5 border-b border-stroke">
     <div
       class="h-full flex justify-between items-center w-full max-w-screen-2xl mx-auto"
     >

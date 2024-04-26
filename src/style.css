@@ -6,6 +6,12 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+  .gradient-tl {
+    background-image: linear-gradient(90deg, #fff 20%, transparent );
+  }
+  .gradient-tr {
+    background-image: linear-gradient(90deg, transparent, #fff );
+  }
 }
 body {
   background-color: #f0f3f7;

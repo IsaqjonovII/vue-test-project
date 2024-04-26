@@ -2,6 +2,7 @@
 import { ref, computed } from "vue";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/vue/24/solid";
 import galleryData from "../mocks";
+import { moveToLeft, moveToRight } from "../utils";
 
 const currentImgIndex = ref(0);
 
@@ -21,17 +22,7 @@ function prevImage() {
 }
 
 const currentImg = computed(() => galleryData[currentImgIndex.value].img);
-
-function handleImgClick(id) {
-  currentImgIndex.value = id;
-}
-
-function moveToLeft(e) {
-  e.target.parentElement.scrollLeft -= 128 * 3;
-}
-function moveToRight(e) {
-  e.target.parentElement.scrollLeft += 128 * 3;
-}
+const handleImgClick = (id) => (currentImgIndex.value = id);
 </script>
 
 <template>
@@ -60,12 +51,13 @@ function moveToRight(e) {
       </button>
     </div>
     <div class="relative">
+      <div class="w-20 h-full gradient-tl absolute left-0 top-0"></div>
       <div
         class="w-full h-28 overflow-x-auto overflow-y-hidden flex items-center gap-2 py-2 no-scrollbar transition-all"
       >
         <button
           @click="moveToLeft"
-          class="p-3 bg-gray-200 rounded-full hover:bg-blue-600 absolute top-[calc(1/2 - 35px)] left-3 hover:text-white transition-colors"
+          class="p-3 bg-gray-200 rounded-full hover:bg-blue-600 absolute top-[calc(1/2 - 35px)] left-3 hover:text-white transition-colors z-10"
         >
           <ChevronLeftIcon class="h-5 w-5 align-middle pointer-events-none" />
         </button>
@@ -79,11 +71,12 @@ function moveToRight(e) {
         />
         <button
           @click="moveToRight"
-          class="p-3 bg-gray-200 rounded-full hover:bg-blue-600 absolute top-[calc(1/2 - 35px) right-3 hover:text-white transition-colors"
+          class="p-3 bg-gray-200 rounded-full hover:bg-blue-600 absolute top-[calc(1/2 - 35px) right-3 hover:text-white transition-colors z-10"
         >
           <ChevronRightIcon class="h-5 w-5 align-middle pointer-events-none" />
         </button>
       </div>
+      <div class="w-20 h-full gradient-tr absolute right-0 top-0"></div>
     </div>
   </div>
 </template>
