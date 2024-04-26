@@ -26,7 +26,7 @@ const handleImgClick = (id) => (currentImgIndex.value = id);
 </script>
 
 <template>
-  <div class="max-w-[835px] p-4 bg-white rounded-xl">
+  <div class="p-4 bg-white rounded-xl">
     <div class="rounded-xl relative">
       <button
         @click="prevImage"
@@ -35,11 +35,11 @@ const handleImgClick = (id) => (currentImgIndex.value = id);
         <ChevronLeftIcon class="h-5 w-5 align-middle" />
       </button>
 
-      <div v-if="galleryData.length > 0" class="w-full max-w-[834px] h-[500px]">
+      <div v-if="galleryData.length > 0" class="w-full h-[500px]">
         <img
           :src="currentImg"
           alt=""
-          class="w-full h-full object-cover object-center"
+          class="w-full h-full object-contain object-center rounded-xl"
         />
       </div>
 

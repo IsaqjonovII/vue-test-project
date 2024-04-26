@@ -1,4 +1,4 @@
-<script set>
+<script setup>
 import { MapPinIcon, ArrowDownTrayIcon } from "@heroicons/vue/24/outline";
 </script>
 
@@ -62,8 +62,8 @@ import { MapPinIcon, ArrowDownTrayIcon } from "@heroicons/vue/24/outline";
         <div class="w-full border-b border-stoke pb-2">
           <h1 class="text-xl font-bold">Location</h1>
         </div>
-        <div class="py-3">
-          <MapPinIcon class="h-5 w-5" />
+        <div class="py-3 flex items-center">
+          <MapPinIcon class="h-6 w-6 align-middle text-blue-500 mr-2" />
 
           <div class="font-semibold text-lg">299, race st. MOTOGP</div>
         </div>
@@ -81,9 +81,9 @@ import { MapPinIcon, ArrowDownTrayIcon } from "@heroicons/vue/24/outline";
     </div>
     <div class="w-full">
       <button
-        class="w-full bg-[#388FF3]/20 text-[#388FF3] py-2 font-semibold rounded-md"
+        class="w-full bg-[#388FF3]/20 text-[#388FF3] py-2 font-semibold rounded-md flex justify-center"
       >
-        Save to Gallery <ArrowDownTrayIcon class="w-5 h-5" />
+        Save to Gallery <ArrowDownTrayIcon class="w-6 h-6 align-middle ml-2" />
       </button>
     </div>
   </div>

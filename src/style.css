@@ -7,10 +7,19 @@
     display: none;
   }
   .gradient-tl {
-    background-image: linear-gradient(90deg, #fff 20%, transparent );
+    background-image: linear-gradient(90deg, #fff 20%, transparent);
   }
   .gradient-tr {
-    background-image: linear-gradient(90deg, transparent, #fff );
+    background-image: linear-gradient(90deg, transparent, #fff);
+  }
+  .shadow-logo {
+    filter: drop-shadow(2px 2px 15px #388ff3);
+  }
+  .footer-img {
+    background-image: url("./assets/bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%;
   }
 }
 body {
