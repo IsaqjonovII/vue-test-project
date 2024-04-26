@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-white border-t border-stroke py-2">
+    <div class="bg-white border-t border-stroke py-2 px-10">
       <div class="max-w-screen-2xl mx-auto flex items-center justify-between">
         <div class="text-base font-semibold">
           ©️ 77.uz 2023. All rights reserved

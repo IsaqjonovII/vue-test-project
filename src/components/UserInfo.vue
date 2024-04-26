@@ -3,7 +3,7 @@ import { MapPinIcon, ArrowDownTrayIcon } from "@heroicons/vue/24/outline";
 </script>
 
 <template>
-  <div class="w-full max-w-80">
+  <div class="w-full max-w-80 sticky top-8">
     <div class="w-full bg-white rounded-lg p-4 mb-6">
       <div class="flex items-center gap-4">
         <div class="w-12 h-12">
