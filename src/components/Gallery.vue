@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, computed } from "vue";
+import { ref, computed } from "vue";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/vue/24/solid";
 import galleryData from "../mocks";
 
@@ -27,14 +27,9 @@ function handleImgClick(id) {
 }
 
 function moveToLeft(e) {
-  if (e.target.parentElement.scrollLeft != 0) {
-    e.target.parentElement.scrollLeft -= 128 * 3;
-  }
+  e.target.parentElement.scrollLeft -= 128 * 3;
 }
 function moveToRight(e) {
-  if (e.target.nodeName === "svg") {
-    e.target.parentElement.parentElement.scrollLeft += 128 * 3;
-  }
   e.target.parentElement.scrollLeft += 128 * 3;
 }
 </script>
@@ -72,7 +67,7 @@ function moveToRight(e) {
           @click="moveToLeft"
           class="p-3 bg-gray-200 rounded-full hover:bg-blue-600 absolute top-[calc(1/2 - 35px)] left-3 hover:text-white transition-colors"
         >
-          <ChevronLeftIcon class="h-5 w-5 align-middle" />
+          <ChevronLeftIcon class="h-5 w-5 align-middle pointer-events-none" />
         </button>
         <img
           v-for="item in galleryData"
@@ -86,7 +81,7 @@ function moveToRight(e) {
           @click="moveToRight"
           class="p-3 bg-gray-200 rounded-full hover:bg-blue-600 absolute top-[calc(1/2 - 35px) right-3 hover:text-white transition-colors"
         >
-          <ChevronRightIcon class="h-5 w-5 align-middle" />
+          <ChevronRightIcon class="h-5 w-5 align-middle pointer-events-none" />
         </button>
       </div>
     </div>
