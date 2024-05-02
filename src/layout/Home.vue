@@ -1,6 +1,6 @@
 <script setup>
-import Product from "../components/Product.vue";
-import UserInfo from "../components/UserInfo.vue";
+import Product from "@/components/Product.vue";
+import UserInfo from "@/components/UserInfo.vue";
 </script>
 
 <template>

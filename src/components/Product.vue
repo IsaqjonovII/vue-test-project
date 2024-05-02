@@ -101,7 +101,7 @@ const paths = ["Home", "Motorcycles", "Sportbikes", "YZF R1 2022"];
         <div class="flex items-center gap-4">
           <div class="w-12 h-12">
             <img
-              class="w-full h-full rounded-full border border-stroke"
+              class="w-full h-full rounded-full border border-'border-500'"
               src="https://api.dicebear.com/8.x/notionists-neutral/svg?size=46&brows=variant06"
               alt=""
             />

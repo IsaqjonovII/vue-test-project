@@ -8,7 +8,7 @@ import { MapPinIcon, ArrowDownTrayIcon } from "@heroicons/vue/24/outline";
       <div class="flex items-center gap-4">
         <div class="w-12 h-12">
           <img
-            class="w-full h-full rounded-full border border-stroke"
+            class="w-full h-full rounded-full border border-'border-500'"
             src="https://api.dicebear.com/8.x/notionists-neutral/svg?size=46&brows=variant06"
             alt=""
           />
@@ -24,7 +24,7 @@ import { MapPinIcon, ArrowDownTrayIcon } from "@heroicons/vue/24/outline";
 
       <div class="mt-3">
         <button
-          class="bg-stroke w-full py-2 rounded-lg font-semibold text-lg hover:bg-blue-500 hover:text-white transition-colors"
+          class="bg-'border-500' w-full py-2 rounded-lg font-semibold text-lg hover:bg-blue-500 hover:text-white transition-colors"
         >
           All bikes
         </button>
@@ -34,7 +34,7 @@ import { MapPinIcon, ArrowDownTrayIcon } from "@heroicons/vue/24/outline";
       <div class="flex items-center gap-4">
         <div class="w-12 h-12">
           <img
-            class="w-full h-full rounded-full border border-stroke"
+            class="w-full h-full rounded-full border border-'border-500'"
             src="https://api.dicebear.com/8.x/notionists-neutral/svg?size=46&brows=variant06"
             alt=""
           />
@@ -50,7 +50,7 @@ import { MapPinIcon, ArrowDownTrayIcon } from "@heroicons/vue/24/outline";
 
       <div class="mt-3">
         <button
-          class="bg-stroke w-full py-2 rounded-lg font-semibold text-lg hover:bg-blue-500 hover:text-white transition-colors"
+          class="bg-'border-500' w-full py-2 rounded-lg font-semibold text-lg hover:bg-blue-500 hover:text-white transition-colors"
         >
           All bikes
         </button>

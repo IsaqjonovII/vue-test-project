@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        baseBg: "#F0F3F7",
-        black: "#16191D",
-        stroke: "#EAEDF0"
+        'white-base': "#F0F3F7",
+        'black-500': "#16191D",
+        'border-500': "#EAEDF0"
       }
     },
   },
